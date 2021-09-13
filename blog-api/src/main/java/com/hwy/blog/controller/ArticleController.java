@@ -24,6 +24,32 @@ public class ArticleController {
         return articleService.listArticle(pageParams);
     }
 
-    @PostMapping("/hots")
-    public Result
+    /**
+     * 首页最热文章
+     * @return
+     */
+    @PostMapping("hot")
+    public Result hotArticle(){
+        int limit  = 5;
+        return articleService.hotArticle(limit);
+    }
+    /**
+     * 首页最新文章
+     * @return
+     */
+    @PostMapping("new")
+    public Result newArticle(){
+        int limit  = 5;
+        return articleService.newArticle(limit);
+    }
+
+    /**
+     * 文章归档
+     * @return
+     */
+    @PostMapping("listArchives")
+    public Result listArchives(){
+
+        return articleService.listArchives();
+    }
 }

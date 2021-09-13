@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hwy.blog.dao.mapper.ArticleMapper">
+
+    <select id="listArchives" resultType="com.hwy.blog.dao.dos.Archives">
+        SELECT YEAR((FROM_UNIXTIME(create_date/1000))) as year,MONTH((FROM_UNIXTIME(create_date/1000))) as month,COUNT(*) as count
+        FROM `ms_article`
+        GROUP BY year,month
+    </select>
+</mapper>
