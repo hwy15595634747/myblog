@@ -9,4 +9,11 @@ public interface TagService {
     List<TagVo> findTagsByArticledId(Long articleId);
 
     Result listHots(int limit);
+
+
+    Result findAll();
+
+    Result findAllDetail();
+
+    Result findAllDetailById(Long id);
 }
